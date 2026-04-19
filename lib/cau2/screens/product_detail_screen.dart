@@ -124,6 +124,19 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           return const SizedBox.shrink();
         },
       ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: const Text(
+          'Ngô Minh Khôi - 6451071037',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 13,
+            color: Colors.grey,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
     );
   }
 }
+
