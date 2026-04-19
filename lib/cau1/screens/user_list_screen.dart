@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../services/user_service.dart';
+import '../controllers/user_controller.dart';
 import '../models/user.dart';
 import '../widgets/user_list_item.dart';
 
@@ -11,7 +11,7 @@ class UserListScreen extends StatefulWidget {
 }
 
 class _UserListScreenState extends State<UserListScreen> {
-  final UserService _userService = UserService();
+  final UserController _userController = UserController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _UserListScreenState extends State<UserListScreen> {
         foregroundColor: Colors.white,
       ),
       body: FutureBuilder<List<User>>(
-        future: _userService.fetchUsers(),
+        future: _userController.loadUsers(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../services/product_service.dart';
+import '../controllers/product_controller.dart';
 import '../models/product.dart';
 import '../widgets/product_card.dart';
 
@@ -11,7 +11,7 @@ class ProductDetailScreen extends StatefulWidget {
 }
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
-  final ProductService _productService = ProductService();
+  final ProductController _productController = ProductController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         foregroundColor: Colors.white,
       ),
       body: FutureBuilder<Product>(
-        future: _productService.fetchProduct(1),
+        future: _productController.loadProduct(1),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(

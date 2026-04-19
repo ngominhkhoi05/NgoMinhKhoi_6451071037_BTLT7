@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'cau1/screens/user_list_screen.dart';
 import 'cau2/screens/product_detail_screen.dart';
+import 'cau3/screens/create_post_screen.dart';
+import 'cau4/screens/user_profile_screen.dart';
+import 'cau5/screens/task_list_screen.dart';
+import 'cau6/screens/product_search_screen.dart';
+import 'cau7/screens/news_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -83,6 +88,76 @@ class HomeScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ProductDetailScreen(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+            _buildMenuButton(
+              context,
+              'Bài 3: Create Post',
+              Icons.post_add,
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CreatePostScreen(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+            _buildMenuButton(
+              context,
+              'Bài 4: Update User',
+              Icons.edit,
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UserProfileScreen(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+            _buildMenuButton(
+              context,
+              'Bài 5: Delete Task',
+              Icons.task_alt,
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TaskListScreen(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+            _buildMenuButton(
+              context,
+              'Bài 6: Search Products',
+              Icons.search,
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProductSearchScreen(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+            _buildMenuButton(
+              context,
+              'Bài 7: Pull to Refresh',
+              Icons.refresh,
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NewsScreen(),
                   ),
                 );
               },
